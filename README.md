@@ -1,6 +1,6 @@
 # NokiaMusic
 
-TODO: Write a gem description
+A simple ruby wrapper around the Nokia Music API
 
 ## Installation
 
@@ -18,7 +18,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Set your client_id:
+
+    NokiaMusic.client_id = ""
+
+Search for music:
+
+    tracks = NokiaMusic.search("Knights of Cydonia", NokiaMusic::Product::TRACK)
+    
+Get either an artist, album, track, or single from an ID
+
+    product = NokiaMusic.product(tracks.items.first.id)
+
+Get a track sample from an ID:
+
+    preview = NokiaMusic.product_sample(id)
 
 ## Contributing
 
